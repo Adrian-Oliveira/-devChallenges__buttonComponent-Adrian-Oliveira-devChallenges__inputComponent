@@ -1,0 +1,15 @@
+#root {
+  margin: 0;
+  display: block;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.App{
+  padding: 10rem 20rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
