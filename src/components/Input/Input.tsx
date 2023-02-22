@@ -29,6 +29,7 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                 name='input'
                 className="inputComponent__input"
 
+                
                 disabled={disabled}
                 placeholder={placeHolder}
                 ref={ref}>

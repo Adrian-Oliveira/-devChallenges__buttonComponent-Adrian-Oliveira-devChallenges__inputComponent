@@ -36,6 +36,14 @@
         }
     }
 
+    &:disabled{
+        background: #F2F2F2;
+
+        /* Gray 5 */
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+    }
+
     &--error{
         input{
             border-color: #D32F2F;
