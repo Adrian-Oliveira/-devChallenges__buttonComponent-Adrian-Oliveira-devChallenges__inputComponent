@@ -2,50 +2,60 @@
 
 .inputComponent{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: .4rem;
     width: 20rem;
     height: 7.7rem;
 
+
     &__label{
+        font: normal 400  1.2rem/1.7rem "Noto Sans JP";
 
-        font-family: 'Noto Sans JP';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 17px;
-
-        /* Gray 1 */
         color: #333333;
-
-        &:focus{
-            color: #2962FF;
-        
-        }
     }
-
     &__input{
-        font-family: 'Noto Sans JP';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 20px;
+        font: normal 500 1.4rem/2rem 'Noto Sans JP';
 
         padding: 1.8rem 1.2rem;
 
-        /* Gray 3 */
         color: #828282;
 
-        /* Gray 3 */
         border: 1px solid #828282;
         border-radius: 8px;
 
         &:hover{
-            border-color: #333333;;
+            border-color: #333333;
         }
 
         &:focus{
             border-color: #2962FF;
+
+            + label{
+                color: #2962FF;
+            }
         }
+    }
+
+    &--error{
+        input{
+            border-color: #D32F2F;
+            &:focus{
+                border-color: #D32F2F;
+            }
+            &:focus + label{
+                color: #D32F2F;
+            }
+
+            &:hover{
+                border-color: #333333;
+            }
+            &:hover + label{
+                color: #333333;
+            }
+        }
+        label{
+            color: #D32F2F;
+        }
+
     }
 }
