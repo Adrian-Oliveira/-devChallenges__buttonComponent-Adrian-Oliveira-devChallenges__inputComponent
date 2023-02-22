@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Input/>
       <Input error/>
+      <Input disabled/>
     </div>
   )
 }
