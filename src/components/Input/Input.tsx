@@ -8,6 +8,7 @@ interface Props {
     placeHolder?:string,
     error?:boolean,
     disabled?: boolean,
+    helperText?:string,
     startIcon?:string,
     endIcon?:string,
     size?:"sm"|"md"|"lg",
@@ -16,14 +17,18 @@ interface Props {
 type Ref = HTMLInputElement;
 
 const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder = "Placeholder",
-                                        error= false, disabled = false,
+                                        error= false, disabled = false,helperText = "",
                                         startIcon= '',endIcon= '',size = "md", },
                                         ref)=>{
 
     return(
         <div className={`inputComponent 
                         ${error?'inputComponent--error':''} 
-                        s${className}`}>
+                        ${className}`}>
+            
+            {!!helperText?
+                <span className='inputComponent__helperText'>{helperText}</span>
+                :null}
             <input 
                 type='text'
                 name='input'

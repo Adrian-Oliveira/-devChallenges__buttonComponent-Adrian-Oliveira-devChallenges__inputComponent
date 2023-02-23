@@ -8,6 +8,11 @@
     height: 7.7rem;
 
 
+    &__helperText{
+        font: normal 400 1rem/1.4rem 'Noto Sans JP';
+        color: #828282;
+
+    }
     &__label{
         font: normal 400  1.2rem/1.7rem "Noto Sans JP";
 
@@ -38,13 +43,16 @@
         &:disabled{
             background: #F2F2F2;
     
-            /* Gray 5 */
             border: 1px solid #E0E0E0;
             border-radius: 8px;
         }
     }
 
     &--error{
+        color: #D32F2F;
+        span{
+            color: inherit;
+        }
         input{
             border-color: #D32F2F;
             &:focus{
@@ -66,4 +74,16 @@
         }
 
     }
+
+    /* input::-moz-placeholder  {
+        font-family: 'Material Icons Outlined';
+    }
+    
+    input:-ms-input-placeholder {
+        font-family: 'Material Icons Outlined';
+    }
+    
+    input:-moz-placeholder {
+        font-family: 'Material Icons Outlined';
+    } */
 }

@@ -10,6 +10,9 @@ function App() {
       <Input/>
       <Input error/>
       <Input disabled/>
+      <Input helperText="Some interesting text" />
+      <Input helperText="Some interesting text" error/>
+      <Input startIcon='email'/>
     </div>
   )
 }
