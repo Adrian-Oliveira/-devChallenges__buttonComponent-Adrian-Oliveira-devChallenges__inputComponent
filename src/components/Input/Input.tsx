@@ -22,25 +22,39 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                                         ref)=>{
 
     return(
-        <div className={`inputComponent 
-                        ${error?'inputComponent--error':''} 
+        <div className={`
+                        ${error?'inputComponent--error':'inputComponent'}
                         ${className}`}>
             
-            {!!helperText?
-                <span className='inputComponent__helperText'>{helperText}</span>
-                :null}
-            <input 
-                type='text'
-                name='input'
-                className="inputComponent__input"
+            {/* {!!helperText?
+                <span className={`inputComponent__helperText
+                                  ${error?'inputComponent__helperText--error':
+                                 ''}`}>
+                    {helperText}
+                </span>
+                :null} */}
 
+            <label className={` 
+                                ${disabled?'inputComponent__inputContainer--disabled':
+                                 error?'inputComponent__inputContainer--error':
+                                 'inputComponent__inputContainer'}`}>
+                <input 
+                    type='text'
+                    name='input'
+                    className={`inputComponent__input
+                                ${disabled?'inputComponent__input--disabled':''}
+                              `}
+
+                    
+                    disabled={disabled}
+                    placeholder={placeHolder}
+                    ref={ref}
+                />
+            </label>
                 
-                disabled={disabled}
-                placeholder={placeHolder}
-                ref={ref}>
-
-            </input>
-            <label htmlFor="input" className='inputComponent__label'>{label}</label>
+            <span className={`
+                              ${error?'inputComponent__label--error':'inputComponent__label '}
+                            `}>{label}</span>
         </div>
     );
 }

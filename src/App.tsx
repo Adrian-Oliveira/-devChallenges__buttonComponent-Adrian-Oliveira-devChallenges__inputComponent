@@ -8,11 +8,13 @@ function App() {
   return (
     <div className="App">
       <Input/>
-      <Input error/>
       <Input disabled/>
+      <Input error/>
+      {/* 
       <Input helperText="Some interesting text" />
       <Input helperText="Some interesting text" error/>
-      <Input startIcon='email'/>
+      <Input startIcon='email'/> 
+      */}
     </div>
   )
 }
