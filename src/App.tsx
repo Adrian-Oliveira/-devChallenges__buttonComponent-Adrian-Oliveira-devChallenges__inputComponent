@@ -7,12 +7,12 @@ function App() {
 
   return (
     <div className="App">
+      <Input helperText="Some interesting text" />
+      <Input helperText="Some interesting text" error/>
       <Input/>
       <Input disabled/>
       <Input error/>
       {/* 
-      <Input helperText="Some interesting text" />
-      <Input helperText="Some interesting text" error/>
       <Input startIcon='email'/> 
       */}
     </div>

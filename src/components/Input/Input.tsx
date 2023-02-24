@@ -26,13 +26,13 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                         ${error?'inputComponent--error':'inputComponent'}
                         ${className}`}>
             
-            {/* {!!helperText?
+            {!!helperText?
                 <span className={`inputComponent__helperText
                                   ${error?'inputComponent__helperText--error':
                                  ''}`}>
                     {helperText}
                 </span>
-                :null} */}
+                :null}
 
             <label className={` 
                                 ${disabled?'inputComponent__inputContainer--disabled':
