@@ -12,6 +12,7 @@ interface Props {
     startIcon?:string,
     endIcon?:string,
     value?:string,
+    fullWidth?:boolean,
     size?:"sm"|"md"|"lg",
 }
 
@@ -19,12 +20,14 @@ type Ref = HTMLInputElement;
 
 const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder = "Placeholder",
                                         error= false, disabled = false,helperText = "",
-                                        startIcon= '',endIcon= '',value ='',size = "md", },
+                                        startIcon= '',endIcon= '',value ='', fullWidth=false,
+                                        size = "md", },
                                         ref)=>{
 
     return(
         
         <div className={`
+                        ${fullWidth?`inputComponent--fullWidth`:null}
                         ${error?'inputComponent--error':'inputComponent'}
                         ${className}`}>
             
@@ -42,6 +45,7 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                                  'inputComponent__inputContainer'}
                              
                                  ${!!size?`inputComponent__inputContainer--${size}`:null}
+                                 ${fullWidth?`inputComponent__inputContainer--fullWidth`:null}
                              `}>
                 
                 {!!startIcon?

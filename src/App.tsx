@@ -8,8 +8,7 @@ function App() {
   return (
     <div className="App">
      
-     <Input size='sm' />
-     <Input size='md' />
+      <Input fullWidth />
 
       <Input/>
       <Input error/>
@@ -19,6 +18,8 @@ function App() {
       <Input startIcon='email'/> 
       <Input endIcon='call'/> 
       <Input value='text' />
+      <Input size='sm' />
+      <Input size='md' />
       
     </div>
   )
