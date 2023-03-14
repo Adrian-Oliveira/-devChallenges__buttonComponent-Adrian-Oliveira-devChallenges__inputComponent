@@ -22,6 +22,7 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                                         ref)=>{
 
     return(
+        
         <div className={`
                         ${error?'inputComponent--error':'inputComponent'}
                         ${className}`}>
@@ -38,6 +39,11 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                                 ${disabled?'inputComponent__inputContainer--disabled':
                                  error?'inputComponent__inputContainer--error':
                                  'inputComponent__inputContainer'}`}>
+                
+                {!!startIcon?
+                    <i className="material-icons inputComponent__startIcon">{startIcon}</i>
+                :null}
+                
                 <input 
                     type='text'
                     name='input'
@@ -50,10 +56,14 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                     placeholder={placeHolder}
                     ref={ref}
                 />
+
+                {!!endIcon?  
+                    <i className="material-icons inputComponent__endIcon">{endIcon}</i>
+                :null}
             </label>
                 
             <span className={`
-                              ${error?'inputComponent__label--error':'inputComponent__label '}
+                              ${error?'inputComponent__label--error':'inputComponent__label'}
                             `}>{label}</span>
         </div>
     );

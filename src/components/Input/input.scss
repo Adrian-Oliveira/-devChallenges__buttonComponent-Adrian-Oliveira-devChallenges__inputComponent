@@ -112,3 +112,15 @@
     }
 }
 
+.inputComponent__inputContainer,
+.inputComponent__inputContainer--error,
+.inputComponent__inputContainer--disabled{
+    display: flex;
+    align-items: center;
+    .inputComponent__startIcon{
+        margin-left: 1.2rem;
+    }
+    .inputComponent__endIcon{
+        margin-right: 1.2rem;
+    }
+}
