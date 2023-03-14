@@ -39,7 +39,10 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
             <label className={` 
                                 ${disabled?'inputComponent__inputContainer--disabled':
                                  error?'inputComponent__inputContainer--error':
-                                 'inputComponent__inputContainer'}`}>
+                                 'inputComponent__inputContainer'}
+                             
+                                 ${!!size?`inputComponent__inputContainer--${size}`:null}
+                             `}>
                 
                 {!!startIcon?
                     <i className="material-icons inputComponent__startIcon">{startIcon}</i>
