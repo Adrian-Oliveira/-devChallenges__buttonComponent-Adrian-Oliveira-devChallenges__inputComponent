@@ -11,6 +11,7 @@ interface Props {
     helperText?:string,
     startIcon?:string,
     endIcon?:string,
+    value?:string,
     size?:"sm"|"md"|"lg",
 }
 
@@ -18,7 +19,7 @@ type Ref = HTMLInputElement;
 
 const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder = "Placeholder",
                                         error= false, disabled = false,helperText = "",
-                                        startIcon= '',endIcon= '',size = "md", },
+                                        startIcon= '',endIcon= '',value ='',size = "md", },
                                         ref)=>{
 
     return(
@@ -54,6 +55,7 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                     
                     disabled={disabled}
                     placeholder={placeHolder}
+                    defaultValue={value}
                     ref={ref}
                 />
 
