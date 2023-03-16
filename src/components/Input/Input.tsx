@@ -13,15 +13,16 @@ interface Props {
     endIcon?:string,
     value?:string,
     fullWidth?:boolean,
+    rows?:number,
     size?:"sm"|"md"|"lg",
 }
 
-type Ref = HTMLInputElement;
+type Ref = HTMLTextAreaElement;
 
 const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder = "Placeholder",
                                         error= false, disabled = false,helperText = "",
                                         startIcon= '',endIcon= '',value ='', fullWidth=false,
-                                        size = "md", },
+                                        rows=1,size = "md", },
                                         ref)=>{
 
     return(
@@ -52,8 +53,9 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                     <i className="material-icons inputComponent__startIcon">{startIcon}</i>
                 :null}
                 
-                <input 
-                    type='text'
+                <textarea
+                    /* rows={rows} */ 
+                    /* type='text' */
                     name='input'
                     className={`inputComponent__input
                                 ${disabled?'inputComponent__input--disabled':''}
@@ -64,7 +66,7 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                     placeholder={placeHolder}
                     defaultValue={value}
                     ref={ref}
-                />
+                ></textarea>
 
                 {!!endIcon?  
                     <i className="material-icons inputComponent__endIcon">{endIcon}</i>
