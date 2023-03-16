@@ -1,4 +1,4 @@
-import React, { forwardRef, LegacyRef, MouseEventHandler } from 'react';
+import React, { forwardRef, } from 'react';
 
 import './input.scss';
 
@@ -47,20 +47,24 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                              
                                  ${!!size?`inputComponent__inputContainer--${size}`:null}
                                  ${fullWidth?`inputComponent__inputContainer--fullWidth`:null}
-                             `}>
+                    
+                             `}
+                    style={{height:`${rows*5.6}rem`}}
+            >
                 
                 {!!startIcon?
                     <i className="material-icons inputComponent__startIcon">{startIcon}</i>
                 :null}
                 
                 <textarea
-                    /* rows={rows} */ 
+                    rows={rows} 
                     /* type='text' */
                     name='input'
                     className={`inputComponent__input
                                 ${disabled?'inputComponent__input--disabled':''}
+                                ${!!rows?'inputComponent__input--multiRows':''}
                               `}
-
+                    
                     
                     disabled={disabled}
                     placeholder={placeHolder}

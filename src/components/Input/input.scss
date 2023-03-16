@@ -48,6 +48,8 @@
         height: 100%;
 
         resize: none;
+        word-wrap: unset;
+        overflow: hidden;
     }
 
 }
@@ -153,3 +155,8 @@
 .inputComponent__inputContainer--fullWidth{
     width:100%;
 }
+
+/* .inputComponent__input--multiRows{
+    word-wrap:break-word;
+    overflow:visible;
+}    */
