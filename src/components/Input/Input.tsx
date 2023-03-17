@@ -40,16 +40,18 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                 </span>
                 :null}
 
+
             <label className={` 
                                 ${disabled?'inputComponent__inputContainer--disabled':
-                                 error?'inputComponent__inputContainer--error':
-                                 'inputComponent__inputContainer'}
+                                  error?'inputComponent__inputContainer--error':
+                                  'inputComponent__inputContainer'}
                              
-                                 ${!!size?`inputComponent__inputContainer--${size}`:null}
-                                 ${fullWidth?`inputComponent__inputContainer--fullWidth`:null}
-                    
+                                ${!!size?`inputComponent__inputContainer--${size}`:null}
+                                ${fullWidth?`inputComponent__inputContainer--fullWidth`:null}
+                                ${rows>1?'inputComponent__inputContainer--multiRows':''}
+
+
                              `}
-                    style={{height:`${rows*5.6}rem`}}
             >
                 
                 {!!startIcon?
@@ -58,13 +60,13 @@ const Input = forwardRef<Ref,Props >(({label ="Label", className="", placeHolder
                 
                 <textarea
                     rows={rows} 
-                    /* type='text' */
                     name='input'
                     className={`inputComponent__input
                                 ${disabled?'inputComponent__input--disabled':''}
-                                ${!!rows?'inputComponent__input--multiRows':''}
+                                ${rows>1?'inputComponent__input--multiRows':''}
                               `}
-                    
+                              
+                    style={{height: `${rows*2}rem`}}
                     
                     disabled={disabled}
                     placeholder={placeHolder}

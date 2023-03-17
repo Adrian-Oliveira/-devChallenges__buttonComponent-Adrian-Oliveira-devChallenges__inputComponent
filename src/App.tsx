@@ -7,7 +7,8 @@ function App() {
 
   return (
     <div className="App">
-      <Input rows={4} />
+      <h1>Input</h1>
+
 
       <Input/>
       <Input error/>
@@ -20,6 +21,7 @@ function App() {
       <Input size='sm' />
       <Input size='md' />
       <Input fullWidth />
+      <Input rows={4} />
       
     </div>
   )
