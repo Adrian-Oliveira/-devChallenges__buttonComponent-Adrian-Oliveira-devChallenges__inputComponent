@@ -13,3 +13,18 @@
   gap: 4.5rem;
 }
 
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15.7rem;
+  width: 100%;
+  justify-content: start;
+
+  
+  .element>p{
+    
+    font: normal 400 1.4rem/1.2rem 'Ubuntu Mono';
+
+    color: white
+  }
+}
